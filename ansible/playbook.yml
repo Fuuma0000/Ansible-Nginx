@@ -1,0 +1,22 @@
+- name: Nginx Playbook
+  hosts: ubuntu_servers
+  tasks:
+    - name: Update apt repo
+      ansible.builtin.apt:
+        update_cache: yes
+
+    - name: Ensure Nginx is installed
+      ansible.builtin.apt:
+        name: nginx
+        state: present
+
+    - name: Ensure Nginx is installed
+      ansible.builtin.apt:
+        name: nginx
+        state: present
+
+    - name: Start Nginx and enable service
+      ansible.builtin.service:
+        name: nginx
+        state: started
+        enabled: yes
